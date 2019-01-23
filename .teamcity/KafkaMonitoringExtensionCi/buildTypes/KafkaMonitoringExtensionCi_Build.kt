@@ -15,9 +15,15 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
     steps {
         maven {
             goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            runnerArgs = ""
             mavenVersion = defaultProvidedVersion()
             jdkHome = "%env.JDK_18%"
+        }
+
+
+exec {
+            path = "make"
+            arguments = "dockerRun"
         }
     }
 
