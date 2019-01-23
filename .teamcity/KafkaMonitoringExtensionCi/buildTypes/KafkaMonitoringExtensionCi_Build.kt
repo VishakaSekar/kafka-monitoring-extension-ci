@@ -20,11 +20,6 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
             jdkHome = "%env.JDK_18%"
         }
 
-
-exec {
-            path = "make"
-            arguments = "dockerRun"
-        }
     }
 
     triggers {
