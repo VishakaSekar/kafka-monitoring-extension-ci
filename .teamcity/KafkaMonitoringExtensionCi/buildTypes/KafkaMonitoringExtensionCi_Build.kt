@@ -15,7 +15,6 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
     steps {
         maven {
             goals = "clean test"
-            runnerArgs = ""
             mavenVersion = defaultProvidedVersion()
             jdkHome = "%env.JDK_18%"
         }
