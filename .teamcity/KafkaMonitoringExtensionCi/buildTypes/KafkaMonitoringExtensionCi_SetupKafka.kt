@@ -12,19 +12,19 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 
 object KafkaMonitoringExtensionCi_Build : BuildType({
-    uuid = "8d38ea0b-5554-4d51-9ca2-aa3897610fdb"
-    name = "Build"
+    uuid = "129f1153-3e0f-4794-a46b-8a1600da7692"
+    name = "SetupKafka"
 
     vcs {
         root(KafkaMonitoringExtensionCi.vcsRoots.KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionCiR)
     }
 
     steps {
-        maven {
-            goals = "clean build"
-            mavenVersion = defaultProvidedVersion()
-            jdkHome = "%env.JDK_18%"
+        exec {
+            path = "make"
+            arguments = "dockerRun"
         }
+
 
 
     }
