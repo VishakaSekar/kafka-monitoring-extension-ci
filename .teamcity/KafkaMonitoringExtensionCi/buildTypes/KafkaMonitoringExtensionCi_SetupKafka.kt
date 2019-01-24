@@ -11,7 +11,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 
-object KafkaMonitoringExtensionCi_Build : BuildType({
+object KafkaMonitoringExtensionCi_SetupKafka : BuildType({
     uuid = "129f1153-3e0f-4794-a46b-8a1600da7692"
     name = "SetupKafka"
 
