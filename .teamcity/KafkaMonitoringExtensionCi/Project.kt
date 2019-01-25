@@ -14,7 +14,7 @@ object Project : Project({
     parentId("_Root")
     name = "Kafka Monitoring Extension Ci"
 
-    vcsRoot(KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionC_2)
+
     vcsRoot(KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionCiR)
 
     buildType(KafkaMonitoringExtensionCi_Build)
