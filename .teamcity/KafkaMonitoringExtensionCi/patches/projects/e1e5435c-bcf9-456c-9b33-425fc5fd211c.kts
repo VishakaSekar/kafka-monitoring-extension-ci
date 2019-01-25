@@ -12,7 +12,7 @@ accordingly, and delete the patch script.
 changeProject(uuid("e1e5435c-bcf9-456c-9b33-425fc5fd211c")) {
     params {
         add {
-            text("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "4c3eaeba-8115-44ef-89e7-80b0e3eed16a", display = ParameterDisplay.HIDDEN, allowEmpty = true)
+            text("APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "4c3eaeba-8115-44ef-89e7-80b0e3eed16a", display = ParameterDisplay.HIDDEN, allowEmpty = true)
         }
     }
 
