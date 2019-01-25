@@ -41,13 +41,13 @@ create(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a"), BuildType({
             jdkHome = "%env.JDK_18%"
         }
         script {
+            scriptContent = "./download-kafka.sh"
+        }
+        script {
             scriptContent = "./broker-list.sh"
         }
         script {
             scriptContent = "./create-topics.sh"
-        }
-        script {
-            scriptContent = "./download-kafka.sh"
         }
         script {
             scriptContent = "./start-kafka-shell.sh"
