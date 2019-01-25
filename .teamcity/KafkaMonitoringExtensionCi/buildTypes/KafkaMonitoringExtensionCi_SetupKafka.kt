@@ -25,8 +25,21 @@ object KafkaMonitoringExtensionCi_SetupKafka : BuildType({
             arguments = "dockerRun"
         }
 
+        //Waits for 5 minutes to send metrics to the controller
+        exec {
+            path = "make"
+            arguments = "sleep"
+        }
+
+    }
+
+    dependencies {
+        dependency(KafkaMonitoringExtensionCi_Build) {
+            snapshot {
 
 
+            }
+        }
     }
 
     triggers {
