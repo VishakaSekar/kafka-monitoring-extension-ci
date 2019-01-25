@@ -16,6 +16,7 @@ object Project : Project({
     vcsRoot(KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionCiR)
 
     buildType(KafkaMonitoringExtensionCi_Build)
+    buildType(KafkaMonitoringExtensionCi_Build1)
 
     features {
         versionedSettings {
