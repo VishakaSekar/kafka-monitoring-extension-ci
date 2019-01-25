@@ -33,14 +33,14 @@ object KafkaMonitoringExtensionCi_SetupKafka : BuildType({
 
     }
 
-//    dependencies {
-//        dependency(KafkaMonitoringExtensionCi_Build) {
-//            snapshot {
-//
-//
-//            }
-//        }
-//    }
+    dependencies {
+        dependency(KafkaMonitoringExtensionCi_Build) {
+            snapshot {
+
+
+            }
+        }
+    }
 
     triggers {
         vcs {
