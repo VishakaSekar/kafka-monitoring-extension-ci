@@ -12,7 +12,7 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
     name = "Build"
 
     vcs {
-        root(KafkaMonitoringExtensionCi.vcsRoots.KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionC_2)
+        root(KafkaMonitoringExtensionCi.vcsRoots.KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionCiR)
     }
 
     steps {
