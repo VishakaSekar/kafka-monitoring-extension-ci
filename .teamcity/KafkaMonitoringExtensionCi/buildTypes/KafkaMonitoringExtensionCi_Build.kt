@@ -16,6 +16,12 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
     }
 
     steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = defaultProvidedVersion()
+            jdkHome = "%env.JDK_18%"
+        }
         dockerCompose {
             file = "docker-compose.yml"
         }
@@ -25,12 +31,6 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
                     path = "Dockerfile"
                 }
             }
-        }
-        maven {
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = defaultProvidedVersion()
-            jdkHome = "%env.JDK_18%"
         }
         script {
             scriptContent = "./broker-list.sh"
