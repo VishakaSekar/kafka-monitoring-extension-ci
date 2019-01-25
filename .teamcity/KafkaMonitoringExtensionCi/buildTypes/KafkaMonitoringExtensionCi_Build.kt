@@ -33,19 +33,19 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
             }
         }
         script {
+            scriptContent = "./download-kafka.sh"
+        }
+        script {
+            scriptContent = "./start-kafka.sh"
+        }
+        script {
             scriptContent = "./broker-list.sh"
         }
         script {
             scriptContent = "./create-topics.sh"
         }
         script {
-            scriptContent = "./download-kafka.sh"
-        }
-        script {
             scriptContent = "./start-kafka-shell.sh"
-        }
-        script {
-            scriptContent = "./start-kafka.sh"
         }
         script {
             scriptContent = "./versions.sh"
