@@ -27,7 +27,15 @@ changeBuildType(uuid("8d38ea0b-5554-4d51-9ca2-aa3897610fdb")) {
         }
     }
     steps {
-        insert(0) {
+        update<MavenBuildStep>(0) {
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            param("teamcity.coverage.idea.includePatterns", "")
+            param("teamcity.coverage.jacoco.patterns", "")
+            param("teamcity.coverage.emma.instr.parameters", "")
+            param("teamcity.coverage.emma.include.source", "")
+        }
+        insert(1) {
             dockerCommand {
                 commandType = build {
                     source = path {
@@ -36,18 +44,10 @@ changeBuildType(uuid("8d38ea0b-5554-4d51-9ca2-aa3897610fdb")) {
                 }
             }
         }
-        insert(1) {
+        insert(2) {
             dockerCompose {
                 file = "docker-compose.yml"
             }
-        }
-        update<MavenBuildStep>(2) {
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            param("teamcity.coverage.idea.includePatterns", "")
-            param("teamcity.coverage.jacoco.patterns", "")
-            param("teamcity.coverage.emma.instr.parameters", "")
-            param("teamcity.coverage.emma.include.source", "")
         }
         insert(3) {
             script {
