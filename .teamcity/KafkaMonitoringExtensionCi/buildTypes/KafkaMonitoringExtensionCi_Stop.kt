@@ -25,8 +25,6 @@ object KafkaMonitoringExtensionCi_Stop : BuildType({
             arguments = "dockerStop"
         }
 
-
-
     }
 
     triggers {
