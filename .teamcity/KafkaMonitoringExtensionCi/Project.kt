@@ -1,5 +1,6 @@
 package KafkaMonitoringExtensionCi
 
+import KafkaMonitoringExtensionCi.buildTypes.*
 import KafkaMonitoringExtensionCi.vcsRoots.*
 import KafkaMonitoringExtensionCi.vcsRoots.KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionCiR
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
@@ -13,6 +14,8 @@ object Project : Project({
     name = "Kafka Monitoring Extension Ci"
 
     vcsRoot(KafkaMonitoringExtensionCi_HttpsGithubComVishakaSekarKafkaMonitoringExtensionCiR)
+
+    buildType(KafkaMonitoringExtensionCi_Build)
 
     features {
         versionedSettings {
