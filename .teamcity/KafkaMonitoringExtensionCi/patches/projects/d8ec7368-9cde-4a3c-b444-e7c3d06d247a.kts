@@ -11,5 +11,5 @@ accordingly, and delete the patch script.
 */
 changeProject(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a")) {
     expectBuildTypesOrder(AbsoluteId("KafkaMonitoringExtensionCi_Build"), AbsoluteId("KafkaMonitoringExtensionCi_SetupKafka"), AbsoluteId("KafkaMonitoringExtensionCi_Stop"))
-    buildTypesOrderIds = arrayListOf(AbsoluteId("KafkaMonitoringExtensionCi_Build"))
+    buildTypesOrderIds = arrayListOf<Id>()
 }
