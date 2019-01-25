@@ -33,4 +33,8 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
         vcs {
         }
     }
+
+    artifactRules = """
+       target/KafkaMonitor-*.zip
+    """.trimIndent()
 })
