@@ -17,5 +17,5 @@ changeProject(uuid("e1e5435c-bcf9-456c-9b33-425fc5fd211c")) {
     }
 
     expectBuildTypesOrder(AbsoluteId("KafkaMonitoringExtensionCi_Build"), AbsoluteId("KafkaMonitoringExtensionCi_SetupKafka"), AbsoluteId("KafkaMonitoringExtensionCi_Stop"))
-    buildTypesOrderIds = arrayListOf(AbsoluteId("KafkaMonitoringExtensionCi_Build"))
+    buildTypesOrderIds = arrayListOf<Id>()
 }
