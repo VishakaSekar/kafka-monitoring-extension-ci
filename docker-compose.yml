@@ -25,7 +25,10 @@ services:
       - "2181:2181"
 
   kafka:
-    build: .
+
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "9092"
       - "1099:1099"
