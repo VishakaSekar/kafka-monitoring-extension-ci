@@ -16,44 +16,21 @@ object KafkaMonitoringExtensionCi_Build : BuildType({
     }
 
     steps {
-        dockerCompose {
-            file = "docker-compose.yml"
-        }
-        dockerCommand {
-            commandType = build {
-                source = path {
-                    path = "Dockerfile"
-                }
-            }
-        }
         maven {
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            goals = "clean install"
             mavenVersion = defaultProvidedVersion()
             jdkHome = "%env.JDK_18%"
         }
-        script {
-            scriptContent = "./broker-list.sh"
-        }
-        script {
-            scriptContent = "./create-topics.sh"
-        }
-        script {
-            scriptContent = "./download-kafka.sh"
-        }
-        script {
-            scriptContent = "./start-kafka-shell.sh"
-        }
-        script {
-            scriptContent = "./start-kafka.sh"
-        }
-        script {
-            scriptContent = "./versions.sh"
-        }
+
+
     }
 
     triggers {
         vcs {
         }
     }
+
+    artifactRules = """
+       target/KafkaMonitor-*.zip
+    """.trimIndent()
 })
