@@ -1,7 +1,7 @@
 version: '2'
 services:
   machine:
-#    image: appdynamics/machine:4.4
+
     environment:
      - APPDYNAMICS_AGENT_ACCOUNT_NAME=customer1
      - APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
@@ -21,6 +21,9 @@ services:
 
   zookeeper:
     image: wurstmeister/zookeeper
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "2181:2181"
 
