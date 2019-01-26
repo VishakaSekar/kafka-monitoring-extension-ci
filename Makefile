@@ -1,4 +1,4 @@
-@echo $(DOCKER_COMPOSE)
+@echo Docker Makefile Echo
 DOCKER_RUN=$(DOCKER_COMPOSE) up -d --build
 DOCKER_STOP=$(DOCKER_COMPOSE) down
 dockerRun: ## Run MA in docker
