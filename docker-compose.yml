@@ -21,9 +21,9 @@ services:
 
   zookeeper:
     image: wurstmeister/zookeeper
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "2181:2181"
 
