@@ -1,7 +1,7 @@
 FROM vishakasekar/machineagent:latest AS MA
 
 
-ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
+ADD target/KafkaMonitor-2.0.2.zip /opt/appdynamics/monitors
 
 RUN unzip -q "target/KafkaMonitor-2.0.2.zip" -d /opt/appdynamics/monitors
 RUN find /opt/appdynamics/monitors/ -name '*.zip' -delete
