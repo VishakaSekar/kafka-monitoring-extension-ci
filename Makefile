@@ -5,11 +5,11 @@ docker-clean:
 	@echo "Delete all untagged/dangling (<none>) images"
 	-docker rmi `docker images -q -f dangling=true`
 
-DOCKER_RUN=$(DOCKER_COMPOSE) up -d --build
+
 DOCKER_STOP=$(DOCKER_COMPOSE) down
 dockerRun: ## Run MA in docker
 	@echo starting container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
-	${DOCKER_RUN}
+	docker-compose --file docker-compose.yml up -d --build
 	@echo started container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
 
 dockerStop:
