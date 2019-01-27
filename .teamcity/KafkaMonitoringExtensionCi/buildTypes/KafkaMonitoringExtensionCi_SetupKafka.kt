@@ -20,6 +20,12 @@ object KafkaMonitoringExtensionCi_SetupKafka : BuildType({
     }
 
     steps {
+
+        exec {
+            path = "make"
+            arguments = "docker-clean"
+        }
+
         exec {
             path = "make"
             arguments = "dockerRun"

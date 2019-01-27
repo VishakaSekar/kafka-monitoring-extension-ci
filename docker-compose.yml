@@ -4,7 +4,7 @@ services:
 
     environment:
      - APPDYNAMICS_AGENT_ACCOUNT_NAME=customer1
-     - APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY=4c3eaeba-8115-44ef-89e7-80b0e3eed16a
+     - APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
      - APPDYNAMICS_CONTROLLER_HOST_NAME=ec2-54-202-144-212.us-west-2.compute.amazonaws.com
      - APPDYNAMICS_CONTROLLER_SSL_ENABLED=false
      - APPDYNAMICS_CONTROLLER_PORT=8090
@@ -19,24 +19,17 @@ services:
       - /:/hostroot:ro
       - /var/run/docker.sock:/var/run/docker.sock
 
+
+
   zookeeper:
     image: wurstmeister/zookeeper
-    build:
-      context: .
-      dockerfile: Dockerfile
     ports:
       - "2181:2181"
-
-
   kafka:
-
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "9092"
       - "1099:1099"
-
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181

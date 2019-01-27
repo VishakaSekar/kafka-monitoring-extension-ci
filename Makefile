@@ -1,5 +1,11 @@
 
-DOCKER_RUN=$(DOCKER_COMPOSE) up --build
+docker-clean:
+	@echo "Remove all non running containers"
+	-docker rm `docker ps -q -f status=exited`
+	@echo "Delete all untagged/dangling (<none>) images"
+	-docker rmi `docker images -q -f dangling=true`
+
+DOCKER_RUN=$(DOCKER_COMPOSE) up -d --build
 DOCKER_STOP=$(DOCKER_COMPOSE) down
 dockerRun: ## Run MA in docker
 	@echo starting container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
