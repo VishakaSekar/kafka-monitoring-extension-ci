@@ -6,7 +6,8 @@ docker-clean:
 	-docker rmi `docker images -q -f dangling=true`
 
 
-DOCKER_STOP=$(DOCKER_COMPOSE) down
+DOCKER_STOP=docker-compose --file docker-compose.yml down
+## $(DOCKER_COMPOSE) down removing this because of multiple makefiles
 dockerRun: ## Run MA in docker
 	@echo starting container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
 	docker-compose --file docker-compose.yml up -d --build

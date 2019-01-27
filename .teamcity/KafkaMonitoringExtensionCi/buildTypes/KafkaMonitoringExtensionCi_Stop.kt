@@ -27,6 +27,14 @@ object KafkaMonitoringExtensionCi_Stop : BuildType({
 
     }
 
+    dependencies {
+        dependency(KafkaMonitoringExtensionCi_SetupKafka) {
+            snapshot {
+
+            }
+        }
+    }
+
     triggers {
         vcs {
         }
