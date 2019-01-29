@@ -1,5 +1,5 @@
 FROM vishakasekar/machineagent:latest AS MA
 ADD target/KafkaMonitor-2.0.2.zip /opt/appdynamics/monitors
-RUN chmod 755 /opt/appdynamics/monitors
-CMD ["sh", "-c", "unzip target/KafkaMonitor-2.0.2.zip -d /opt/appdynamics/monitors"]
+CMD ["sh", "-c", "chmod 755 /opt/appdynamics/monitors/KafkaMonitor-2.0.2.zip"]
+CMD ["sh", "-c", "unzip /opt/appdynamics/monitors/KafkaMonitor-2.0.2.zip -d /opt/appdynamics/monitors"]
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
