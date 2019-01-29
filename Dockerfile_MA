@@ -1,5 +1,4 @@
 FROM vishakasekar/machineagent:latest AS MA
 ADD target/KafkaMonitor-2.0.2.zip /opt/appdynamics/monitors
-CMD ["sh", "-c", "unzip target/KafkaMonitor-2.0.2.zip -d /opt/appdynamics/monitors"]
-RUN find /opt/appdynamics/monitors/ -name '*.zip' -delete
+
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
