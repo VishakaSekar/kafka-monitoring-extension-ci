@@ -32,6 +32,7 @@ services:
     build: .
     ports:
       - "9092"
+      - "1099:1099"
 
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
