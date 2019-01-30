@@ -2,6 +2,9 @@ version: '2'
 services:
   machine:
 
+    depends_on:
+     - kafka
+
     environment:
      - APPDYNAMICS_AGENT_ACCOUNT_NAME=customer1
      - APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
@@ -9,7 +12,7 @@ services:
      - APPDYNAMICS_CONTROLLER_SSL_ENABLED=false
      - APPDYNAMICS_CONTROLLER_PORT=8090
      - MACHINE_AGENT_PROPERTIES=-Dappdynamics.sim.enabled=true -Dappdynamics.docker.enabled=false
-     - KAFKA_HOST=host.docker.internal
+     - KAFKA_HOST=kafka
      - KAFKA_PORT=1099
 
     build:
@@ -29,7 +32,7 @@ services:
     build: .
     ports:
       - "9092"
-      - "1099:1099"
+
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
