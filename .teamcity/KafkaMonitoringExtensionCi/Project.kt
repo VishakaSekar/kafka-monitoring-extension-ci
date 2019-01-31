@@ -18,6 +18,7 @@ object Project : Project({
 
     buildType(KafkaMonitoringExtensionCi_Build)
     buildType(KafkaMonitoringExtensionCi_SetupKafka)
+    buildType(KafkaMonitoringExtensionCi_IntegrationTestsInLinux)
     buildType(KafkaMonitoringExtensionCi_Stop)
 
     features {
