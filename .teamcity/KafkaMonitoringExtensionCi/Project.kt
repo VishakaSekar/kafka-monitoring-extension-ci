@@ -35,6 +35,7 @@ object Project : Project({
     buildTypesOrder = arrayListOf(
             KafkaMonitoringExtensionCi_Build,
             KafkaMonitoringExtensionCi_SetupKafka,
+            KafkaMonitoringExtensionCi_IntegrationTestsInLinux,
             KafkaMonitoringExtensionCi_Stop
     )
 
