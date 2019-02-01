@@ -4,9 +4,8 @@ services:
   zookeeper:
     image: wurstmeister/zookeeper
     ports:
-      - "2181:2181"
       - "2182:2182"
-  kafka1:
+  kafka:
     build: .
     ports:
       - "9092"
@@ -15,22 +14,8 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka1 -Dcom.sun.management.jmxremote.rmi.port=1099"
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka1 -Dcom.sun.management.jmxremote.rmi.port=1099"
       JMX_PORT: 1099
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-# connects to same zookeeper
-  kafka2:
-    build: .
-    ports:
-      - "9092"
-      - "1098:1098"
-
-    environment:
-      KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2182
-      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka2 -Dcom.sun.management.jmxremote.rmi.port=1098"
-      JMX_PORT: 1098
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -45,8 +30,8 @@ services:
      - MACHINE_AGENT_PROPERTIES=-Dappdynamics.sim.enabled=true -Dappdynamics.docker.enabled=false
      - KAFKA_HOST_1=kafka1
      - KAFKA_PORT_1=1099
-     - KAFKA_HOST_2=kafka2
-     - KAFKA_PORT_2=1098
+     - KAFKA_USERNAME=monitorRole
+     - KAFKA_PWD=QED
 
     build:
       context: .
@@ -54,4 +39,3 @@ services:
     volumes:
       - /:/hostroot:ro
       - /var/run/docker.sock:/var/run/docker.sock
-
