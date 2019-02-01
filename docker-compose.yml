@@ -19,7 +19,7 @@ services:
       JMX_PORT: 1099
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
+# connects to same zookeeper
   kafka2:
     build: .
     ports:
