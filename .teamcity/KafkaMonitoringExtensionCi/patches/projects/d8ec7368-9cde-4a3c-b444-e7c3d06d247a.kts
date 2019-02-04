@@ -12,6 +12,9 @@ accordingly, and delete the patch script.
 changeProject(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a")) {
     params {
         add {
+            param("env.KAFKA_ENCRYPTED_PWD", "V+PidSk2vIuQga9rEIShlg==")
+        }
+        add {
             param("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "4c3eaeba-8115-44ef-89e7-80b0e3eed16a")
         }
     }
