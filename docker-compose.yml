@@ -31,7 +31,7 @@ services:
      - KAFKA_HOST_1=kafka
      - KAFKA_PORT_1=1099
      - KAFKA_USERNAME=monitorRole
-     - KAFKA_PWD=QED
+     - KAFKA_PWD=V+PidSk2vIuQga9rEIShlg==
 
     build:
       context: .
