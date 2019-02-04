@@ -17,5 +17,8 @@ changeProject(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a")) {
         add {
             param("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "4c3eaeba-8115-44ef-89e7-80b0e3eed16a")
         }
+        add {
+            param("env.KAKFA_ENCRYPTION_KEY", "axcdde43535hdhdgfiniyy576")
+        }
     }
 }
