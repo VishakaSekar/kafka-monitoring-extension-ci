@@ -32,7 +32,7 @@ services:
 #      JMX_PORT: 1098
 #    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock
-#
+
 
   machine:
     environment:
