@@ -19,19 +19,19 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-#  kafka2:
-#    build: .
-#    ports:
-#      - "9092"
-#      - "1098:1098"
-#
-#    environment:
-#      KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
-#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-#      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka2 -Dcom.sun.management.jmxremote.rmi.port=1098"
-#      JMX_PORT: 1098
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
+  kafka2:
+    build: .
+    ports:
+      - "9092"
+      - "1098:1098"
+
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka2 -Dcom.sun.management.jmxremote.rmi.port=1098"
+      JMX_PORT: 1098
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
 
   machine:
