@@ -1,5 +1,6 @@
 FROM vishakasekar/machineagent:latest AS MA
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
+COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
 RUN cp /opt/appdynamics/monitors/KafkaMonitor/config_ci.yml /opt/appdynamics/monitors/KafkaMonitor/config.yml
 RUN rm /opt/appdynamics/monitors/KafkaMonitor/config_ci.yml
