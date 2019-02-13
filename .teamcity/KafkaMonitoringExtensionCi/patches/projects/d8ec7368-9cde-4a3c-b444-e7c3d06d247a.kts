@@ -20,5 +20,6 @@ changeProject(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a")) {
         add {
             password("env.KAKFA_ENCRYPTION_KEY", "credentialsJSON:42aea520-eccf-4cbb-b251-2e209c4633a7", display = ParameterDisplay.HIDDEN)
         }
+
     }
 }
