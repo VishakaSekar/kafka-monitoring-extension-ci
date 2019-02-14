@@ -3,7 +3,7 @@ FROM vishakasekar/machineagent:latest AS MA
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
 COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
-#WORKDIR /opt/appdynamics/monitors/KafkaMonitor
+WORKDIR /opt/appdynamics/monitors/KafkaMonitor
 #RUN KAFKA_ENCRYPTED_PASSWORD=$("java -cp "kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED")
 #RUN echo $KAFKA_ENCRYPTED_PASSWORD
 #RUN KAFKA_ENCRYPTED_PASSWORD=${KAFKA_ENCRYPTED_PASSWORD#"***************Encrypted String***************"}
