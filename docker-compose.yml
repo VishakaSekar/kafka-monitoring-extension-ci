@@ -48,7 +48,7 @@ services:
      - KAFKA_PORT_2=1098
      - KAFKA_USERNAME=monitorRole
      - KAKFA_ENCRYPTION_KEY
-     - KAFKA_ENCRYPTED_PWD
+
 
     build:
       context: .
