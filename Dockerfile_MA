@@ -5,8 +5,8 @@ COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
 RUN java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED > tmp.txt
 RUN cat tmp.txt
-RUN head -2 tmp.txt | tail -1
-ENV KAFKA_ENCRYPTED_PWD $(head -2 tmp.txt | tail -1)
+RUN head -2 tmp.txt | tail -1 > tmp1.txt
+ENV KAFKA_ENCRYPTED_PWD echo $(head -2 tmp.txt | tail -1))
 RUN echo $KAFKA_ENCRYPTED_PWD
 COPY /src/integration-test/resources/conf/config_ci.yml /opt/appdynamics/monitors/KafkaMonitor/config.yml
 RUN find /opt/appdynamics/monitors/ -name '*.zip' -delete
