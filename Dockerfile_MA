@@ -5,8 +5,7 @@ COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
 RUN java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED > tmp.txt
 RUN cat tmp.txt
-RUN pwd=$(java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED)
-RUN echo $pwd
+RUN head -2 tmp.txt | tail -1
 #WORKDIR /opt/appdynamics/monitors/KafkaMonitor
 #RUN KAFKA_ENCRYPTED_PASSWORD=$("java -cp  com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED")
 #RUN echo $KAFKA_ENCRYPTED_PASSWORD
