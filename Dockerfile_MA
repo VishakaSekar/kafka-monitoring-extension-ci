@@ -6,15 +6,7 @@ RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/
 RUN java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED > tmp.txt
 RUN cat tmp.txt
 RUN head -2 tmp.txt | tail -1
-#WORKDIR /opt/appdynamics/monitors/KafkaMonitor
-#RUN KAFKA_ENCRYPTED_PASSWORD=$("java -cp  com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED")
-#RUN echo $KAFKA_ENCRYPTED_PASSWORD
-#RUN KAFKA_ENCRYPTED_PASSWORD=${KAFKA_ENCRYPTED_PASSWORD#"***************Encrypted String***************"}
-#RUN echo "kafka encrypt"
-#RUN echo $KAFKA_ENCRYPTED_PASSWORD
-#RUN pwd
-#RUN KAFKA_ENCRYPTED_PASSWORD=$("java -cp "kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED")
-#RUN echo $KAFKA_ENCRYPTED_PASSWORD
+ENV KAFKA_ENCRYPTED_PWD $(head -2 tmp.txt | tail -1)
 COPY /src/integration-test/resources/conf/config_ci.yml /opt/appdynamics/monitors/KafkaMonitor/config.yml
 RUN find /opt/appdynamics/monitors/ -name '*.zip' -delete
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
