@@ -47,7 +47,7 @@ services:
      - KAFKA_HOST_2=kafka2
      - KAFKA_PORT_2=1098
      - KAFKA_USERNAME=monitorRole
-     - KAFKA_ENCRYPTION_KEY
+     - KAFKA_ENCRYPTION_KEY=axcdde43535hdhdgfiniyy576
 
     build:
       context: .
