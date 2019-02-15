@@ -12,13 +12,16 @@ accordingly, and delete the patch script.
 changeProject(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a")) {
     params {
         add {
-            password("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "credentialsJSON:2569bece-5c89-46d6-a9ef-d4d57f268e87", display = ParameterDisplay.HIDDEN, readOnly = true)
-        }
-        add {
             password("env.KAFKA_ENCRYPTION_KEY", "credentialsJSON:42aea520-eccf-4cbb-b251-2e209c4633a7", display = ParameterDisplay.HIDDEN)
         }
         add {
+            password("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "credentialsJSON:2569bece-5c89-46d6-a9ef-d4d57f268e87", display = ParameterDisplay.HIDDEN, readOnly = true)
+        }
+        add {
             password("env.APPDYNAMICS_CONTROLLER_PWD", "credentialsJSON:ac7712b6-d670-4f18-813f-9ecdeb7fef7e", display = ParameterDisplay.HIDDEN)
+        }
+        add {
+            password("env.KAFKA_PWD", "credentialsJSON:3f5363b8-9bdd-46ce-bb79-51c17b3856c3", display = ParameterDisplay.HIDDEN)
         }
     }
 }
