@@ -55,6 +55,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_MA
+      args:
+        - ENCRYPTION_KEY=${ENCRYPTION_KEY}
 
     volumes:
       - /:/hostroot:ro
