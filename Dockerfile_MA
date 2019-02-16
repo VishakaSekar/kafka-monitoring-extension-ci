@@ -3,7 +3,7 @@ RUN pwd
 ENV KEY=${ENCRYPTION_KEY}
 ENV PWD=${PLAINTEXT_PWD}
 RUN echo $KEY
-RUN eco $PWD
+RUN echo $PWD
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
 COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
