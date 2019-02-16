@@ -47,15 +47,14 @@ services:
      - KAFKA_HOST_2=kafka2
      - KAFKA_PORT_2=1098
      - KAFKA_USERNAME=monitorRole
-     - ENCRYPTION_KEY
-     - PLAINTEXT_PWD
+     - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+     - PLAINTEXT_PWD=${PLAINTEXT_PWD}
 
 
     build:
       context: .
       dockerfile: Dockerfile_MA
-      args:
-       - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+
     volumes:
       - /:/hostroot:ro
       - /var/run/docker.sock:/var/run/docker.sock
