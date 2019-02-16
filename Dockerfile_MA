@@ -1,6 +1,6 @@
 FROM vishakasekar/machineagent:latest AS MA
 RUN pwd
-RUN /bin/bash -c 'echo $ENCRYPTION_KEY'
+RUN /bin/bash -c 'echo "$ENCRYPTION_KEY"'
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
 COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
