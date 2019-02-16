@@ -1,6 +1,6 @@
 FROM vishakasekar/machineagent:latest AS MA
 RUN pwd
-ENV ENVVAR envvar
+ENV ENVVAR $TEST
 RUN echo $TEST && echo ${TEST}
 RUN /bin/bash -c echo $TEST
 RUN [ "sh", "-c", "echo $TEST" ]
