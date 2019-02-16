@@ -18,10 +18,10 @@ changeProject(uuid("d8ec7368-9cde-4a3c-b444-e7c3d06d247a")) {
             password("env.APPDYNAMICS_CONTROLLER_PWD", "credentialsJSON:ac7712b6-d670-4f18-813f-9ecdeb7fef7e", display = ParameterDisplay.HIDDEN)
         }
         add {
-            password("env.PLAINTEXT_PWD", "credentialsJSON:3f5363b8-9bdd-46ce-bb79-51c17b3856c3", display = ParameterDisplay.HIDDEN)
+            password("env.PLAINTEXT_PWD", "zxx79a66a8da8b18181", display = ParameterDisplay.HIDDEN)
         }
         add {
-            password("env.ENCRYPTION_KEY", "credentialsJSON:42aea520-eccf-4cbb-b251-2e209c4633a7", display = ParameterDisplay.HIDDEN)
+            password("env.ENCRYPTION_KEY", "zxxc041dd7c481f14d0a252bd2c5d0100862acc6edf255b1ab7d553e0b306a6b630", display = ParameterDisplay.HIDDEN)
         }
     }
 }
