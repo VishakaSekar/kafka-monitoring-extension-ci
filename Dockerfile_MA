@@ -6,7 +6,6 @@ RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/
 #RUN java -DENCRYPTION_KEY=axcdde43535hdhdgfiniyy576 -DPLAINTEXT_PWD=QED -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor
 #RUN java -DENCRYPTION_KEY=${ENCRYPTION_KEY} -DPLAINTEXT_PWD=${PLAINTEXT_PWD} -cp  "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor
 #RUN java -DENCRYPTION_KEY=${ENCRYPTION_KEY} -DPLAINTEXT_PWD=${PLAINTEXT_PWD} -cp  "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor > tmp1.txt
-CMD ["java","-DENCRYPTION_KEY=${ENCRYPTION_KEY} -DPLAINTEXT_PWD=${PLAINTEXT_PWD}" "-jar" "-cp  "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor"]
 #RUN cat tmp1.txt
 #COPY /src/integration-test/resources/conf/config_ci.yml /opt/appdynamics/monitors/KafkaMonitor/config.yml
 #RUN export KAFKA_ENCRYPTED_PWD="$(head -2 tmp1.txt | tail -1)" && echo $KAFKA_ENCRYPTED_PWD && \
