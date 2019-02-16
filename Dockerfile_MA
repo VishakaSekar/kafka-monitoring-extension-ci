@@ -1,5 +1,7 @@
 FROM vishakasekar/machineagent:latest AS MA
 RUN pwd
+ARG ENCRYPTION_KEY
+RUN echo $ENCRYPTION_KEY
 #ENV ENVVAR $TEST
 #RUN echo $TEST && echo ${TEST}
 #RUN /bin/bash -c echo $TEST
