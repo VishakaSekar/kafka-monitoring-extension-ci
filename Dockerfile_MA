@@ -2,17 +2,11 @@ FROM vishakasekar/machineagent:latest AS MA
 RUN pwd
 ARG ENCRYPTION_KEY
 ARG PLAINTEXT_PWD
-RUN echo $ENCRYPTION_KEY
-#ENV ENVVAR $TEST
-#RUN echo $TEST && echo ${TEST}
-#RUN /bin/bash -c echo $TEST
-#RUN [ "sh", "-c", "echo $TEST" ]
-#RUN [ "sh", "-c", "echo $ENVVAR" ]
-RUN echo ${ENCRYPTION_KEY}
+ENV ENCRYPTION_KEY=$ENCRYPTION_KEY
+ENV PLAINTEXT_PWD=$PLAINTEXT_PWD
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
 COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
-RUN echo ${ENCRYPTION_KEY} && java -DENCRYPTION_KEY=${ENCRYPTION_KEY} -DPLAINTEXT_PWD=${PLAINTEXT_PWD} -cp  "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor
 RUN java -DENCRYPTION_KEY=${ENCRYPTION_KEY} -DPLAINTEXT_PWD=${PLAINTEXT_PWD} -cp  "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor > tmp1.txt
 RUN cat tmp1.txt
 COPY /src/integration-test/resources/conf/config_ci.yml /opt/appdynamics/monitors/KafkaMonitor/config.yml
