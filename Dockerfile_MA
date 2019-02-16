@@ -3,7 +3,7 @@ RUN pwd
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
 COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
-RUN java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED
+#RUN java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor axcdde43535hdhdgfiniyy576 QED
 RUN java -cp "/opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar" com.appdynamics.extensions.crypto.Encryptor > tmp.txt
 RUN cat tmp.txt
 COPY /src/integration-test/resources/conf/config_ci.yml /opt/appdynamics/monitors/KafkaMonitor/config.yml
