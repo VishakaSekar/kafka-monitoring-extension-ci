@@ -47,8 +47,8 @@ services:
      - KAFKA_HOST_2=kafka2
      - KAFKA_PORT_2=1098
      - KAFKA_USERNAME=monitorRole
-     - ENCRYPTION_KEY
-     - PLAINTEXT_PWD
+     - ENCRYPTION_PROPERTIES=-DENCRYPTION_KEY=axcdde43535hdhdgfiniyy576 -DPLAINTEXT_PWD=QED
+
 
     build:
       context: .
