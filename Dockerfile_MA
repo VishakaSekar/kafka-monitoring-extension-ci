@@ -1,7 +1,5 @@
 FROM vishakasekar/machineagent:latest AS MA
 RUN pwd
-RUN export ENCRYPTION_KEY=%env.ENCRYPTION_KEY%
-RUN export PLAINTEXT_PWD=%env.DPLAINTEXT_PWD%
 ADD target/KafkaMonitor-*.zip /opt/appdynamics/monitors
 COPY /src/test/resources/keystore/kafka.client.truststore.jks /opt/appdynamics
 RUN unzip -q "/opt/appdynamics/monitors/KafkaMonitor-*.zip" -d /opt/appdynamics/monitors
