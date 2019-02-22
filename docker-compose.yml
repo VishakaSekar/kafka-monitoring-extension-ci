@@ -58,6 +58,9 @@ services:
         - ENCRYPTION_KEY=${ENCRYPTION_KEY}
         - PLAINTEXT_PWD=${PLAINTEXT_PWD}
 
+    ports:
+      - "8090:8090"
+
     volumes:
       - /:/hostroot:ro
       - /var/run/docker.sock:/var/run/docker.sock
