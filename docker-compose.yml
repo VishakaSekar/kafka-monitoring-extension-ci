@@ -59,7 +59,7 @@ services:
         - PLAINTEXT_PWD=${PLAINTEXT_PWD}
 
     ports:
-      - "8090:8090"
+      - "9090:9090"
 
     volumes:
       - /:/hostroot:ro
