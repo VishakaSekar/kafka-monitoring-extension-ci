@@ -14,5 +14,5 @@ COPY /src/integration-test/resources/conf/config_ci.yml /opt/appdynamics/monitor
 RUN export KAFKA_ENCRYPTED_PWD="$(head -2 tmp1.txt | tail -1)" && echo $KAFKA_ENCRYPTED_PWD && \
 sed -i "s/old/${KAFKA_ENCRYPTED_PWD}/g" /opt/appdynamics/monitors/KafkaMonitor/config.yml
 RUN find /opt/appdynamics/monitors/ -name '*.zip' -delete
-RUN ["sh", "-c" , "java -DKAFKA_HOST_1=localhost -jar  /opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar"]
+RUN ["sh", "-c" , "java  -jar  /opt/appdynamics/monitors/KafkaMonitor/kafka-monitoring-extension.jar"]
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
