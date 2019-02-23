@@ -48,18 +48,12 @@ services:
      - KAFKA_PORT_2=1098
      - KAFKA_USERNAME=monitorRole
 
-
-
-
     build:
       context: .
       dockerfile: Dockerfile_MA
       args:
         - ENCRYPTION_KEY=${ENCRYPTION_KEY}
         - PLAINTEXT_PWD=${PLAINTEXT_PWD}
-
-    ports:
-      - "9090:9090"
 
     volumes:
       - /:/hostroot:ro
