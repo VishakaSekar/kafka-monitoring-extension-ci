@@ -59,30 +59,30 @@ services:
       - /:/hostroot:ro
       - /var/run/docker.sock:/var/run/docker.sock
 
-#  workbench:
-#    environment:
-#      - APPDYNAMICS_AGENT_ACCOUNT_NAME=customer1
-#      - APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
-#      - APPDYNAMICS_CONTROLLER_HOST_NAME=ec2-54-202-144-212.us-west-2.compute.amazonaws.com
-#      - APPDYNAMICS_CONTROLLER_SSL_ENABLED=false
-#      - APPDYNAMICS_CONTROLLER_PORT=8090
-#      - MACHINE_AGENT_PROPERTIES=-Dappdynamics.sim.enabled=true -Dappdynamics.docker.enabled=false
-#      - KAFKA_HOST_1=kafka1
-#      - KAFKA_PORT_1=1099
-#      - KAFKA_HOST_2=kafka2
-#      - KAFKA_PORT_2=1098
-#      - KAFKA_USERNAME=monitorRole
-#
-#    build:
-#      context: .
-#      dockerfile: Dockerfile_Workbench
-#      args:
-#        - ENCRYPTION_KEY=${ENCRYPTION_KEY}
-#        - PLAINTEXT_PWD=${PLAINTEXT_PWD}
-#
-#    ports:
-#      - "9089:9089"
-#
-#    volumes:
-#      - /:/hostroot:ro
-#      - /var/run/docker.sock:/var/run/docker.sock
+  workbench:
+    environment:
+      - APPDYNAMICS_AGENT_ACCOUNT_NAME=customer1
+      - APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY
+      - APPDYNAMICS_CONTROLLER_HOST_NAME=ec2-54-202-144-212.us-west-2.compute.amazonaws.com
+      - APPDYNAMICS_CONTROLLER_SSL_ENABLED=false
+      - APPDYNAMICS_CONTROLLER_PORT=8090
+      - MACHINE_AGENT_PROPERTIES=-Dappdynamics.sim.enabled=true -Dappdynamics.docker.enabled=false
+      - KAFKA_HOST_1=kafka1
+      - KAFKA_PORT_1=1099
+      - KAFKA_HOST_2=kafka2
+      - KAFKA_PORT_2=1098
+      - KAFKA_USERNAME=monitorRole
+
+    build:
+      context: .
+      dockerfile: Dockerfile_Workbench
+      args:
+        - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+        - PLAINTEXT_PWD=${PLAINTEXT_PWD}
+
+    ports:
+      - "9089:9089"
+
+    volumes:
+      - /:/hostroot:ro
+      - /var/run/docker.sock:/var/run/docker.sock
