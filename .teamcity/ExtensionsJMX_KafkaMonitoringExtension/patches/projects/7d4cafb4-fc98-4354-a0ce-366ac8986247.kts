@@ -15,6 +15,9 @@ changeProject(uuid("7d4cafb4-fc98-4354-a0ce-366ac8986247")) {
             password("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "credentialsJSON:65747919-6823-4341-8a84-db15e792b3d7", display = ParameterDisplay.HIDDEN)
         }
         add {
+            param("env.APPDYNAMICS_CONTROLLER_PORT", "8090")
+        }
+        add {
             password("env.PLAINTEXT_PWD", "credentialsJSON:2423b6cf-3998-441f-a070-0ddc2256b8bd", display = ParameterDisplay.HIDDEN)
         }
         add {
