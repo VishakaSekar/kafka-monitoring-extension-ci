@@ -22,7 +22,7 @@ object ExtensionsJMX_KafkaMonitoringExtension_Build : BuildType({
 
     steps {
         maven {
-            goals = "clean install"
+            goals = "clean install -Pno-integration-tests"
             mavenVersion = defaultProvidedVersion()
             jdkHome = "%env.JDK_18%"
         }
