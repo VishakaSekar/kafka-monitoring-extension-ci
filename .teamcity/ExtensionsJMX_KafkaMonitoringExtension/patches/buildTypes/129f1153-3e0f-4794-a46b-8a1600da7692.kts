@@ -26,7 +26,7 @@ changeBuildType(uuid("129f1153-3e0f-4794-a46b-8a1600da7692")) {
             param("env.PLAINTEXT_PWD", "zxx79a66a8da8b18181")
         }
         update {
-            password("env.PLAINTEXT_PWD", "credentialsJSON:2423b6cf-3998-441f-a070-0ddc2256b8bd", display = ParameterDisplay.HIDDEN)
+            param("env.PLAINTEXT_PWD", "credentialsJSON:2423b6cf-3998-441f-a070-0ddc2256b8bd")
         }
     }
 }
