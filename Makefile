@@ -7,10 +7,10 @@ docker-clean:
 
 
 DOCKER_STOP=sudo docker-compose --file docker-compose.yml down
-## $(DOCKER_COMPOSE) down removing this because of multiple makefiles
+
 dockerRun: ## Run MA in docker
 	@echo starting container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
-	sudo docker-compose --file docker-compose.yml up --force-recreate -d --build
+	sudo APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY=$(APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY) docker-compose --file docker-compose.yml up --force-recreate -d --build
 	@echo started container ##################%%%%%%%%%%%%%%%%%%%&&&&&&&&&&&&&&&&&&&&&&
 
 dockerStop:
