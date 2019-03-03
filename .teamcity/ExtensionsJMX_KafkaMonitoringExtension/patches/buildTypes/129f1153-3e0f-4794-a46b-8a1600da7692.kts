@@ -20,7 +20,7 @@ changeBuildType(uuid("129f1153-3e0f-4794-a46b-8a1600da7692")) {
             param("env.ENCRYPTION_KEY", "zxxc041dd7c481f14d0a252bd2c5d0100862acc6edf255b1ab7d553e0b306a6b630")
         }
         update {
-            password("env.ENCRYPTION_KEY", "credentialsJSON:5c88d389-6725-4be7-a257-b4b03d0bac0b", display = ParameterDisplay.HIDDEN)
+            param("env.ENCRYPTION_KEY", "credentialsJSON:5c88d389-6725-4be7-a257-b4b03d0bac0b")
         }
         expect {
             param("env.PLAINTEXT_PWD", "zxx79a66a8da8b18181")
