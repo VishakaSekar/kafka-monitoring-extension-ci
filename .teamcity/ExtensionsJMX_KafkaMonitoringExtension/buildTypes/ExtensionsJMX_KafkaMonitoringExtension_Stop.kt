@@ -8,6 +8,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2018_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.exec
 import ExtensionsJMX_KafkaMonitoringExtension.vcsRoots.kafkamonitoringextensionci
+import ExtensionsJMX_KafkaMonitoringExtension.KafkaMonitoringExtension_SetupKafka
 
 
 object ExtensionsJMX_KafkaMonitoringExtension_Stop : BuildType({
