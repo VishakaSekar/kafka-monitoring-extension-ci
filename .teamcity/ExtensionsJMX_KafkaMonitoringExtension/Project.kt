@@ -28,9 +28,9 @@ object Project : Project({
     }
 
     buildTypesOrder = arrayListOf(
-            KafkaMonitoringExtensionCi_Build,
-            KafkaMonitoringExtensionCi_SetupKafka,
-            KafkaMonitoringExtensionCi_IntegrationTestsInLinux,
-            KafkaMonitoringExtensionCi_Stop
+            ExtensionsJMX_KafkaMonitoringExtension_Build,
+            ExtensionsJMX_KafkaMonitoringExtension_SetupKafka,
+            ExtensionsJMX_KafkaMonitoringExtension_IntegrationTestsInLinux,
+            ExtensionsJMX_KafkaMonitoringExtension_Stop
     )
 })
