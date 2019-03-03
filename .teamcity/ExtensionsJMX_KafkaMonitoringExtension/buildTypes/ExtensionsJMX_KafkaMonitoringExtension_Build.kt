@@ -3,6 +3,7 @@ package ExtensionsJMX_KafkaMonitoringExtension.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
+import ExtensionsJMX_KafkaMonitoringExtension.vcsRoots.kafkamonitoringextensionci
 
 
 import jetbrains.buildServer.configs.kotlin.v2018_2.BuildType
