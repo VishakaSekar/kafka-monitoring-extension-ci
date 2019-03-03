@@ -26,4 +26,11 @@ object Project : Project({
             storeSecureParamsOutsideOfVcs = true
         }
     }
+
+    buildTypesOrder = arrayListOf(
+            KafkaMonitoringExtensionCi_Build,
+            KafkaMonitoringExtensionCi_SetupKafka,
+            KafkaMonitoringExtensionCi_IntegrationTestsInLinux,
+            KafkaMonitoringExtensionCi_Stop
+    )
 })
