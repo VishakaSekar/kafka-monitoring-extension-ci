@@ -15,6 +15,11 @@ object Project : Project({
 
     vcsRoot(kafkamonitoringextensionci)
 
+    buildType(ExtensionsJMX_KafkaMonitoringExtension_Build)
+    buildType(ExtensionsJMX_KafkaMonitoringExtension_SetupKafka)
+    buildType(ExtensionsJMX_KafkaMonitoringExtension_IntegrationTestsInLinux)
+    buildType(ExtensionsJMX_KafkaMonitoringExtension_Stop)
+
     features {
         versionedSettings {
             id = "PROJECT_EXT_24"
