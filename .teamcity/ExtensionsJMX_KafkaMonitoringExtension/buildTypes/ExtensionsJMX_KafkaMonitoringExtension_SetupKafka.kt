@@ -20,13 +20,6 @@ object ExtensionsJMX_KafkaMonitoringExtension_SetupKafka : BuildType({
     }
 
 
-    params {
-        param("env.APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", "zxx907bb5f174b083cd4f6413203c259a5679287fefe33795f54430a4d0d6b0e47849de9b58c4b8a733")
-        param("env.ENCRYPTION_KEY", "zxxc041dd7c481f14d0a252bd2c5d0100862acc6edf255b1ab7d553e0b306a6b630")
-        param("env.PLAINTEXT_PWD", "zxx79a66a8da8b18181")
-    }
-
-
     steps {
         exec {
             path = "make"
