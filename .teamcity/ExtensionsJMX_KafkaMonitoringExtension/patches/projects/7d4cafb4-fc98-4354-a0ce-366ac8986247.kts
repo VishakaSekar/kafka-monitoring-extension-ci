@@ -23,5 +23,8 @@ changeProject(uuid("7d4cafb4-fc98-4354-a0ce-366ac8986247")) {
         add {
             password("env.ENCRYPTION_KEY", "credentialsJSON:5c88d389-6725-4be7-a257-b4b03d0bac0b", display = ParameterDisplay.HIDDEN)
         }
+        add {
+            param("env.APPDYNAMICS_AGENT_ACCOUNT_NAME", "customer1")
+        }
     }
 }
