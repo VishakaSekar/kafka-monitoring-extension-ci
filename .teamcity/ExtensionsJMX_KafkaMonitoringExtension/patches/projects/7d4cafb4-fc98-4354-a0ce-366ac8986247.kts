@@ -29,5 +29,8 @@ changeProject(uuid("7d4cafb4-fc98-4354-a0ce-366ac8986247")) {
         add {
             param("env.APPDYNAMICS_AGENT_ACCOUNT_NAME", "customer1")
         }
+        add {
+            param("env.APPDYNAMICS_CONTROLLER_SSL_ENABLED", "false")
+        }
     }
 }
